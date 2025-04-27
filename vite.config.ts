@@ -17,9 +17,11 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 5173,
-    allowedHosts: true,
+    strictPort: true,
     hmr: {
-      overlay: false // Disables the error overlay if you only want console errors
+      clientPort: 443,  // использование порта HTTPS для WebSocket
+      host: 'preview--apple-gift-cart-site-1.poehali.dev', // использование домена проекта
+      protocol: 'wss' // использование WSS протокола
     }
   },
 });
